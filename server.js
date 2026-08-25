@@ -215,8 +215,8 @@ app.post("/api/analyze", upload.single("file"), async (req, res) => {
   }
 });
 
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "index.html"));
+app.get('(.*)', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
 app.listen(PORT, "0.0.0.0", () => {
